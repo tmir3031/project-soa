@@ -1,0 +1,24 @@
+@startuml
+actor User as "User [Person]"
+
+rectangle "nginx\n[Component: nginx]" as LB
+rectangle "authservice\n[Component: javascript]" as AUTH
+rectangle "courses-service\n[Component: javascript]" as COURSES
+rectangle "enrollment-service\n[Component: javascript]" as ENROLLMENT
+rectangle "invoices-service\n[Component: javascript]" as INVOICES
+rectangle "email-service\n[Component: javascript]" as EMAIL
+database "Database\n[Container: Technology]" as DB
+
+User --> LB : [HTTP requests]
+LB --> AUTH : Login
+LB --> COURSES : View courses
+LB --> ENROLLMENT : Enroll in course
+AUTH --> DB : Reads from and writes to [MongoDB]
+COURSES --> DB : Reads from and writes to [MongoDB]
+ENROLLMENT --> DB : Reads/writes
+ENROLLMENT --> INVOICES : Kafka queue (enrollments)
+INVOICES --> EMAIL : RabbitMQ queue (invoices)
+EMAIL --> User : Sends confirmation email
+
+@enduml
+

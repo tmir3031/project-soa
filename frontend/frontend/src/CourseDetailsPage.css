@@ -1,0 +1,62 @@
+/* Centrare pe ecran */
+.course-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Cutia de detalii curs */
+.course-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* Titlul cursului */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Detalii despre curs */
+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Text mai gros pentru etichetele detaliilor */
+p strong {
+    color: #333;
+}
+
+/* Mesaj de încărcare */
+.loading-text {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Buton de înscriere */
+.enroll-button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.enroll-button:hover {
+    background: #218838;
+}
